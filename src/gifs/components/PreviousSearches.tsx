@@ -1,18 +1,19 @@
-import type { FC } from 'react';
+import type { FC } from "react";
 
 interface Props {
   searches: string[];
 
-  onLabelClicked: (term: string) => void;
+  onlabelClicked: (term:string) => void;
 }
 
-export const PreviousSearches: FC<Props> = ({ searches, onLabelClicked }) => {
+export const PreviousSearches: FC<Props> = ({ searches, onlabelClicked }: Props) => {
   return (
     <div className="previous-searches">
-      <h2>Búsquedas previas</h2>
+      <h2>Previous searches</h2>
       <ul className="previous-searches-list">
         {searches.map((term) => (
-          <li key={term} onClick={() => onLabelClicked(term)}>
+          <li key={term}
+          onClick={()=> onlabelClicked(term)}>
             {term}
           </li>
         ))}
